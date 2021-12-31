@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,19 +32,29 @@ public class MainActivity extends AppCompatActivity {
     private TextView Confirm,Active,Recovered,Death,Tests,countryName,updatedAt;
     private PieChart pieChart;
 
+    String country="India";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
 
         List<countryData>  list = new ArrayList<>();
+
+        if(getIntent().getStringExtra("country") != null)
+        {
+            country=getIntent().getStringExtra("country");
+        }
 
         countryName = findViewById(R.id.countryName);
         updatedAt = findViewById(R.id.updateAt);
 
         pieChart = findViewById(R.id.pieChart);
+        countryName = findViewById(R.id.countryName);
 
         Confirm = findViewById(R.id.totalConfirm);
         Active = findViewById(R.id.totalActive);
@@ -51,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Death = findViewById(R.id.totalDeath);
         Tests = findViewById(R.id.totalTests);
 
+        countryName.setText(country);
 
         findViewById(R.id.countryName).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                 for(int i=0;i<list.size();i++)
                 {
-                    if(list.get(i).getCountry().equals("India"))
+                    if(list.get(i).getCountry().equals(country))
                     {
                         int confirm=Integer.parseInt(list.get(i).getCases());
                         int active=Integer.parseInt(list.get(i).getActive());

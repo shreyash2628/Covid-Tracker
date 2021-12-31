@@ -12,17 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:background="#272626"
+        android:background="#F0E9F3"
         >
 
         <TextView
             android:id="@+id/srNo"
-            android:layout_width="30dp"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="123"
             android:layout_alignParentStart="true"
-            android:textSize="18sp"
-            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textColor="@color/black"
             android:layout_centerVertical="true"
             android:layout_margin="3dp"
             />
@@ -31,7 +31,7 @@
             android:layout_width="110dp"
             android:layout_height="45dp"
             android:id="@+id/flagIV"
-            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
             android:layout_toRightOf="@id/srNo"
 
             />
@@ -41,8 +41,8 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:text="Country Name"
-            android:textSize="18sp"
-            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textColor="@color/black"
             android:layout_centerVertical="true"
             android:layout_margin="3dp"
             android:layout_toRightOf="@id/flagIV"
@@ -56,8 +56,8 @@
             android:text="123456"
             android:layout_alignParentRight="true"
             android:gravity="right"
-            android:textSize="18sp"
-            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             android:layout_centerVertical="true"
             android:layout_margin="3dp"
             android:layout_toRightOf="@id/countryName"

@@ -1,6 +1,7 @@
 package com.example.covidtracker.api;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.covidtracker.MainActivity;
 import com.example.covidtracker.R;
 
 import java.text.NumberFormat;
@@ -21,6 +23,7 @@ public class countryAdapter extends RecyclerView.Adapter<countryAdapter.CountryV
 
     private Context context;
     private List<countryData> list;
+
 
     public countryAdapter(Context context, List<countryData> list) {
         this.context = context;
@@ -51,6 +54,12 @@ public class countryAdapter extends RecyclerView.Adapter<countryAdapter.CountryV
         Map<String,String> img = data.getCountryInfo();
 
         Glide.with(context).load(img.get("flag")).into(holder.flag);
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, MainActivity.class);
+            intent.putExtra("country",data.getCountry());
+            context.startActivity(intent);
+        });
 
 
 
