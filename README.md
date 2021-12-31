@@ -11,3 +11,9 @@ In this app, we get live covid data of countries ,data is fetched using API
 
 
 ![Alt text](https://github.com/shreyash2628/Covid-Tracker/blob/master/app/src/main/res/drawable/search%20tab.jpg?raw=true "Title")
+
+
+### SEARCH RESULTS
+
+
+![Alt text](https://github.com/shreyash2628/Covid-Tracker/blob/master/app/src/main/res/drawable/result%20tab.jpg?raw=true "Title")
